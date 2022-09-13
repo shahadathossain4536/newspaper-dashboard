@@ -1,6 +1,16 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = ({ children }) => {
+  const menuItem = (
+    <>
+      <li>
+        <NavLink className="rounded-xl" to="/sign-in">
+          Sign In
+        </NavLink>
+      </li>
+    </>
+  );
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -24,16 +34,15 @@ const Navbar = ({ children }) => {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">Navbar Title</div>
+          <div className="flex-1 px-2 mx-2 text-3xl hover:text-blue-800 font-extrabold">
+            <Link to="/">
+              News 360 <sup>o</sup>{" "}
+            </Link>
+          </div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* <!-- Navbar menu content here --> */}
-              <li>
-                <a>Navbar Item 1</a>
-              </li>
-              <li>
-                <a>Navbar Item 2</a>
-              </li>
+              {menuItem}
             </ul>
           </div>
         </div>
@@ -44,12 +53,7 @@ const Navbar = ({ children }) => {
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
+          {menuItem}
         </ul>
       </div>
     </div>
