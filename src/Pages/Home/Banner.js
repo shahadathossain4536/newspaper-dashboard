@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen"
+      className="hero  h-44"
       style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="sign-in" element={<SignIn></SignIn>}></Route>
-          <Route path="sing-up" element={<SignUp></SignUp>}></Route>
+          <Route path="sign-up" element={<SignUp></SignUp>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </Navbar>
