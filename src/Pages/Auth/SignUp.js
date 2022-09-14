@@ -33,7 +33,7 @@ const SignUp = () => {
       </p>
     );
   }
-  if (user) {
+  if (user || guser) {
     navigate(from, { replace: true });
   }
 

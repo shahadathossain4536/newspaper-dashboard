@@ -1,7 +1,6 @@
 import React from "react";
 
 const NewsDashboardData = ({ newsArticle }) => {
-  console.log("newsdata", newsArticle);
   const { author, urlToImage, url, source, title, description } = newsArticle;
   return (
     <tr>

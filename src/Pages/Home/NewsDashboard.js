@@ -5,14 +5,14 @@ import NewsDashboardData from "./NewsDashboardData";
 const NewsDashboard = () => {
   const [newsArticles, setNewsArticles] = useState([]);
   const apiKey = "edb9933cbcd3418dbb48d793b683ebe0";
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=edb9933cbcd3418dbb48d793b683ebe0`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setNewsArticles(data.articles));
   }, []);
 
-  //   console.log(newsArticles.articles);
+  console.log("dsdddddss", newsArticles);
   return (
     <div className="my-20">
       <h2 className="text-center text-5xl py-10">News DeashBoard</h2>
@@ -30,8 +30,11 @@ const NewsDashboard = () => {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            {newsArticles.map((newsArticle) => (
-              <NewsDashboardData newsArticle={newsArticle}></NewsDashboardData>
+            {newsArticles.map((newsArticle, index) => (
+              <NewsDashboardData
+                index={index}
+                newsArticle={newsArticle}
+              ></NewsDashboardData>
             ))}
           </tbody>
         </table>
