@@ -19,7 +19,7 @@ const SignUp = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const confirmPassword = event.target.email.value;
+
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     console.log(name, email, password);
@@ -90,15 +90,6 @@ const SignUp = () => {
                 />
               </div>
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Confirm Password</span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                />
-
                 <label className="text-center">
                   <p className="">
                     Already have a account?
