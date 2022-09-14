@@ -1,35 +1,10 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import banner from "../../img/Brown Modern Fashion Newspaper Tumblr Banner.png";
 const Banner = () => {
   return (
-    <div
-      className="hero  h-44"
-      style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
-    >
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Hello World!")
-                  .callFunction(() => {
-                    console.log("String typed out!");
-                  })
-                  .pauseFor(2500)
-
-                  .callFunction(() => {
-                    console.log("All strings were deleted");
-                  })
-                  .start();
-              }}
-            />
-          </p>
-          <button className="btn btn-primary">Get Started</button>
-        </div>
-      </div>
+    <div>
+      <img src={banner} alt="" srcset="" />
     </div>
   );
 };
