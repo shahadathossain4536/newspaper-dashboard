@@ -5,13 +5,15 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, createError] = useUpdateProfile(auth);
-
+  const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const handleSignUp = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -31,6 +33,10 @@ const SignUp = () => {
       </p>
     );
   }
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
   console.log(gerror?.message || error?.message || createError?.message);
   console.log("user", user);
   return (
