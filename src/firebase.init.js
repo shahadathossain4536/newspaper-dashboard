@@ -2,12 +2,12 @@ import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBMbUr4IcDmbaPPHukPO5SabuoozWsOCZs",
-  authDomain: "newspaper-dashboard.firebaseapp.com",
-  projectId: "newspaper-dashboard",
-  storageBucket: "newspaper-dashboard.appspot.com",
-  messagingSenderId: "219756063135",
-  appId: "1:219756063135:web:544dd42c883b8bf0b235aa",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDERID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

@@ -10,7 +10,7 @@ const NewsDashboard = () => {
       .then((res) => res.json())
       .then((data) => setNewsArticles(data.articles));
   }, []);
-  const newsArticles2 = newsArticles;
+  const newsArticles2 = [...newsArticles];
 
   return (
     <div className="my-20">
